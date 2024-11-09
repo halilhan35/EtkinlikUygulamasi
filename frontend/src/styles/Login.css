@@ -1,0 +1,120 @@
+/* Genel Ayarlar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 40px; /* Üstten boşluk */
+  background: #FFEDD5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Üstten hizalama */
+  height: 100vh;
+}
+
+/* Başlık */
+.event-app-title {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 120px;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0;
+}
+
+/* Login Başlığı */
+.login-title {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 80px;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0;
+}
+
+/* Kullanıcı Adı ve Şifre Alanları */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+/* Kullanıcı Adı veya E-posta */
+.username-email, .password {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  color: #000000;
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Input Alanları */
+.input-rectangle {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* Input Alanı */
+.input-field {
+  width: 90%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-family: 'Inter';
+  font-size: 24px;
+  color: #000000;
+  background-color: transparent;
+}
+
+/* Giriş Butonu Alanı */
+.login-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Giriş Butonu */
+.login-button {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 22px;
+  text-align: center;
+  color: #000000;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Kayıt Olma Mesajı */
+.register-message {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  text-align: center;
+  color: #000000;
+  margin-top: 20px;
+}

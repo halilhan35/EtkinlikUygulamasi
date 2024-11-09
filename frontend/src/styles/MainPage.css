@@ -1,0 +1,52 @@
+/* MainPage.css */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .main-container {
+    position: relative;
+    width: 1440px;
+    height: 2048px;
+    background: #FFEDD5;
+    border: 1px solid #000000;
+  }
+  
+  /* EVENT APP */
+  .event-app {
+    position: absolute;
+    width: 888px;
+    height: 145px;
+    left: 276px;
+    top: 5px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 120px;
+    line-height: 145px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* engineer */
+  .engineer {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: 1312px;
+    top: 51px;
+    background: url('engineer.png') no-repeat center center;
+    background-size: cover;
+  }
+  
+  /* account-settings */
+  .account-settings {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: 1206px;
+    top: 51px;
+    background: url('account-settings.png') no-repeat center center;
+    background-size: cover;
+  }
+  

@@ -1,0 +1,163 @@
+/* Register.css */
+
+/* Genel Ayarlar */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 1440px;
+    height: 2048px;
+    background: #FFEDD5;
+    border: 1px solid #000000;
+  }
+  
+  /* Başlık */
+  .EVENT_APP {
+    position: absolute;
+    width: 888px;
+    height: 145px;
+    left: 276px;
+    top: 67px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 120px;
+    line-height: 145px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .REGISTER {
+    position: absolute;
+    width: 480px;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 254px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 80px;
+    line-height: 97px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* Form Alanları */
+  .label {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 25px;
+  }
+  
+  .Username { top: 747px; }
+  .Password { top: 841px; }
+  .Email { top: 935px; }
+  .Location { top: 1029px; }
+  .AreasOfInterest { top: 1123px; }
+  .Name { top: 1217px; }
+  .Surname { top: 1311px; }
+  .DateOfBirth { top: 1395px; }
+  .Gender { top: 1479px; }
+  .Number { top: 1563px; }
+  
+  /* Giriş Alanları */
+  /* Giriş Alanları */
+.input-field {
+  position: absolute;
+  width: 800px;
+  height: 50px;
+  left: 390px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: #000000; /* Yazı rengi eklendi */
+  font-family: 'Inter';
+  font-size: 20px; /* Yazı boyutu eklendi */
+  padding-left: 20px; /* Soldan boşluk eklendi */
+  box-sizing: border-box; /* Padding'in alanı etkilemesini sağlar */
+}
+
+.Rectangle2 { top: 748px; }
+.Rectangle5 { top: 841px; }
+.Rectangle6 { top: 935px; }
+.Rectangle7 { top: 1029px; }
+.Rectangle8 { top: 1123px; }
+.Rectangle9 { top: 1217px; }
+.Rectangle10 { top: 1311px; }
+.Rectangle11 { top: 1395px; }
+.Rectangle12 { top: 1478px; }
+.Rectangle13 { top: 1569px; }
+
+  
+  /* Butonlar */
+.Rectangle4 {
+  position: absolute;
+  width: 420px;
+  height: 80px;
+  left: 510px;
+  top: 1688px;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.Register-button {
+  position: absolute;
+  width: 360px;
+  height: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0px;
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 48px;
+  text-align: center;
+  color: #000000; /* Yazı rengi siyah yapıldı */
+  background-color: #FFFFFF; /* Arka plan rengini beyaz yaptık */
+  border: none; /* Kenarlık kaldırıldı */
+  border-radius: 10px; /* Kenarları yuvarlatıldı */
+  cursor: pointer; /* Buton üzerine gelindiğinde fareyi değiştirme */
+}
+  
+ /* Kullanıcı Resmi */
+.user-icon {
+  position: absolute;
+  width: 312px;
+  height: 312px;
+  left: 563px;
+  top: 393px;
+  background: url(default_user.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%; /* Profil resmi yuvarlak yapmak isterseniz */
+  cursor: pointer;
+}
+  
+  /* Giriş Yap Bağlantısı */
+  .LoginLink {
+    position: absolute;
+    width: 480px;
+    height: 122px;
+    left: 480px;
+    top: 1837px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+  }
