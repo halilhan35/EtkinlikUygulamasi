@@ -1,5 +1,6 @@
 package com.etkinlikuygulamasi.backend.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,12 +15,19 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "eventname")
     private String eventName;
+    @Column(name = "eventdescription")
     private String eventDescription;
+    @Column(name = "eventdate")
     private String eventDate;
+    @Column(name = "eventtime")
     private String eventTime;
+    @Column(name = "eventduration")
     private int eventDuration;
+    @Column(name = "eventlocation")
     private String eventLocation;
+    @Column(name = "eventcategory")
     private String eventCategory;
 
     public Event() {

@@ -1,0 +1,143 @@
+
+/* Genel Ayarlar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 1440px;
+  height: 2048px;
+  background: #FFEDD5;
+  border: 1px solid #000000;
+}
+
+/* Başlıklar */
+.EVENT_APP {
+  position: absolute;
+  width: 888px;
+  height: 145px;
+  left: 276px;
+  top: 25px;
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 120px;
+  line-height: 145px;
+  text-align: center;
+  color: #000000;
+}
+
+.DELETE_EVENT {
+  position: absolute;
+  width: 684px;
+  height: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 240px;
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 97px;
+  text-align: center;
+  color: #000000;
+}
+
+/* Form Etiketleri */
+.label {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #000000;
+  position: absolute;
+  width: 290px;
+  height: 60px;
+}
+
+.EventName { top: 458px; left: 109px; }
+.EventDescription { top: 559px; left: 113px; }
+.EventDate { top: 660px; left: 113px; }
+.EventTime { top: 761px; left: 113px; }
+.EventDuration { top: 862px; left: 113px; opacity: 0.9; }
+.EventLocation { top: 963px; left: 109px; }
+.EventCategory { top: 1064px; left: 109px; }
+
+/* Giriş Alanları */
+.input-field {
+  position: absolute;
+  width: 400px;
+  height: 60px;
+  left: 475px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: #000000;
+  font-family: 'Inter';
+  font-size: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.EventNameField { top: 458px; }
+.EventDescriptionField { top: 559px; }
+.EventDateField { top: 660px; }
+.EventTimeField { top: 761px; }
+.EventDurationField { top: 862px; }
+.EventLocationField { top: 963px; }
+.EventCategoryField { top: 1064px; }
+
+/* Butonlar */
+.delete_event {
+  position: absolute;
+  width: 320px;
+  height: 60px;
+  left: 330px;
+  top: 1179px;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.DELETE {
+  position: absolute;
+  width: 300px;
+  height: 47px;
+  left: 10px;
+  top: 5px;
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  color: #000000;
+}
+
+/* Event Seçici */
+.event-selector {
+  position: absolute;
+  width: 400px;
+  left: 975px;
+  top: 410px;
+}
+
+.event-selector select {
+  width: 100%;
+  height: 80px;
+  font-family: 'Inter';
+  font-size: 20px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Event Seçimi için label */
+.event-selector label {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 32px;
+  color: #000000;
+  display: block;
+  margin-bottom: 10px;
+}

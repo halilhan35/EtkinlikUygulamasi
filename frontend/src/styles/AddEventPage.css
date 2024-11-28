@@ -1,0 +1,100 @@
+.addEventPage {
+    box-sizing: border-box;
+    position: relative;
+    width: 1440px;
+    height: 2048px;
+    background: #FFEDD5;
+    border: 1px solid #000000;
+  }
+  
+  .eventAppTitle {
+    position: absolute;
+    width: 888px;
+    height: 145px;
+    left: 276px;
+    top: 67px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 120px;
+    line-height: 145px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .addEventTitle {
+    position: absolute;
+    width: 480px;
+    height: 100px;
+    left: calc(50% - 480px / 2);
+    top: 267px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 80px;
+    line-height: 97px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .inputLabel {
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 80px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .inputField {
+    position: absolute;
+    width: 600px;
+    height: 60px;
+    left: 510px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    color: #000000; /* Metin rengi siyah */
+    font-family: 'Inter';
+    font-style: italic;
+    font-size: 24px; /* Metin boyutu */
+    padding: 10px; /* İçerik boşluğu */
+    border: 1px solid #CCCCCC; /* Kenar çizgisi */
+  }
+  
+  .eventNameField { top: 471px; }
+  .eventDescriptionField { top: 572px; }
+  .eventDateField { top: 673px; }
+  .eventTimeField { top: 774px; }
+  .eventDurationField { top: 875px; }
+  .eventLocationField { top: 976px; }
+  .eventCategoryField { top: 1077px; }
+  
+  .addEventButton {
+    position: absolute;
+    width: 420px;
+    height: 80px;
+    left: 510px;
+    top: 1241px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .addButtonText {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+    background-color: #FFFFFF;
+  }
+  

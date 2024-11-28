@@ -61,7 +61,7 @@ body {
 /* Input Alanları */
 .input-rectangle {
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   height: 40px;
   background: #FFFFFF;
   border-radius: 5px;

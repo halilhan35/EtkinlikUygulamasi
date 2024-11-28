@@ -18,7 +18,7 @@ public class AdminService {
 
     // Admin doğrulama işlemi - Hem kullanıcı adı hem de e-posta ile kontrol
     public Admin authenticateAdmin(String adminNameOrEmail, String adminPassword) {
-        System.out.println("Veritabanından admin kontrol ediliyor: " + adminNameOrEmail);
+        System.out.println("Veritabanindan admin kontrol ediliyor: " + adminNameOrEmail);
         Admin admin = adminRepository.findByAdminNameAndAdminPassword(adminNameOrEmail, adminPassword);
         if (admin == null) {
             admin = adminRepository.findByAdminEmailAndAdminPassword(adminNameOrEmail, adminPassword);
