@@ -11,4 +11,5 @@ import com.etkinlikuygulamasi.backend.model.CreatorId;
 @Repository
 public interface CreatorRepository extends JpaRepository<Creator, CreatorId> {
     List<Creator> findByCreatorId(int creatorId);
+    List<Creator> findByEventId(int eventId);
 }

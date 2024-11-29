@@ -16,4 +16,6 @@ public interface ParticipantRepository extends JpaRepository<Participant, Partic
     @Query("SELECT p FROM Participant p WHERE p.id.participantId != :participantId AND p.id.eventId NOT IN " +
            "(SELECT p2.id.eventId FROM Participant p2 WHERE p2.id.participantId = :participantId)")
     List<Participant> findByParticipantIdNot(@Param("participantId") Integer participantId);
+    List<Participant> findByParticipantId(int participantId);
+    List<Participant> findByEventId(int eventId);
 }

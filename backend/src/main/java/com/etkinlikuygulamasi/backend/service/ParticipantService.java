@@ -53,4 +53,18 @@ public class ParticipantService {
                            .collect(Collectors.toList());
     }
 
+    public void deleteParticipantsByUserId(int userId) {
+        List<Participant> participants = participantRepository.findByParticipantId(userId);
+        for (Participant participant : participants) {
+            participantRepository.delete(participant);
+        }
+    }
+
+    public void deleteParticipantsByEventId(int eventId) {
+        List<Participant> participants = participantRepository.findByEventId(eventId);
+        for (Participant participant : participants) {
+            participantRepository.delete(participant);
+        }
+    }  
+
 }

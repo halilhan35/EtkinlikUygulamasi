@@ -50,4 +50,14 @@ public class PointService {
         return pointRepository.findByUserID(userID);
     }
 
+    public void deletePointsByUserId(int userId) {
+        List<Point> points = pointRepository.findByUserID(userId);
+        if (!points.isEmpty()) {
+            pointRepository.deleteAll(points);
+            System.out.println("Points for user ID " + userId + " have been deleted.");
+        } else {
+            System.out.println("No points found for user ID " + userId);
+        }
+    }
+
 }

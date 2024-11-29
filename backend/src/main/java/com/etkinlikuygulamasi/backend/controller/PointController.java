@@ -2,6 +2,7 @@ package com.etkinlikuygulamasi.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,12 @@ public class PointController {
     @GetMapping("/user/{userID}/total")
     public int getTotalPointsByUserID(@PathVariable int userID) {
         return pointService.calculateTotalPointsByUserID(userID);
+    }
+
+    @DeleteMapping("/user/{userId}")
+    public String deletePointsByUserId(@PathVariable int userId) {
+        pointService.deletePointsByUserId(userId);
+        return "Points for user ID " + userId + " deleted successfully!";
     }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -70,6 +71,16 @@ public class EventController {
             return ResponseEntity.ok(updatedEvent);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Eğer etkinlik bulunmazsa 404 döner
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteEvent(@PathVariable Integer id) {
+        try {
+            eventService.deleteEvent(id);
+            return ResponseEntity.noContent().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 

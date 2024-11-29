@@ -25,5 +25,19 @@ public class CreatorService {
     public List<Creator> getEventsByCreatorId(int creatorId) {
         return creatorRepository.findByCreatorId(creatorId); // CreatorId'ye göre sorgu
     }
+
+    public void deleteCreatorsByUserId(int userId) {
+        List<Creator> creators = creatorRepository.findByCreatorId(userId);
+        for (Creator creator : creators) {
+            creatorRepository.delete(creator);
+        }
+    }
+
+    public void deleteCreatorsByEventId(int eventId) {
+        List<Creator> creators = creatorRepository.findByEventId(eventId);
+        for (Creator creator : creators) {
+            creatorRepository.delete(creator);
+        }
+    }
     
 }

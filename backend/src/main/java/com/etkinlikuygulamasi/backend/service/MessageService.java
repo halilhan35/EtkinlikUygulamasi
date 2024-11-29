@@ -41,4 +41,19 @@ public class MessageService {
     public void deleteMessage(int messageID) {
         messageRepository.deleteById(messageID);
     }
+
+    public void deleteMessagesByUserID(int userID) {
+        List<Message> messages = messageRepository.findByUserID(userID);
+        for (Message message : messages) {
+            messageRepository.delete(message);
+        }
+    }
+
+    public void deleteMessagesByEventID(int eventID) {
+        List<Message> messages = messageRepository.findByEventID(eventID);
+        for (Message message : messages) {
+            messageRepository.delete(message);
+        }
+    }    
+    
 }

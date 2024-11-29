@@ -1,20 +1,19 @@
-/* General Page Styling */
-#admin-page {
+/* Admin Page Container */
+.admin-page {
     position: relative;
     width: 1440px;
-    height: 1460px;
+    height: auto;
     background: #FFEDD5;
     border: 1px solid #000000;
     box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   /* Admin Page Header */
   .admin-page-header {
-    position: absolute;
-    width: 684px;
-    height: 100px;
-    left: calc(50% - 684px/2 + 1px);
-    top: 267px;
     font-family: 'Inter';
     font-style: italic;
     font-weight: 300;
@@ -22,15 +21,11 @@
     line-height: 97px;
     text-align: center;
     color: #000000;
+    margin-bottom: 30px; /* Altındaki elemanlarla boşluk bırak */
   }
   
   /* Event App Header */
   .event-app-header {
-    position: absolute;
-    width: 888px;
-    height: 145px;
-    left: 276px;
-    top: 67px;
     font-family: 'Inter';
     font-style: italic;
     font-weight: 300;
@@ -38,132 +33,33 @@
     line-height: 145px;
     text-align: center;
     color: #000000;
+    margin-bottom: 50px;
   }
   
-  /* Username Label */
-  .username-label {
-    position: absolute;
-    width: 290px;
-    height: 60px;
-    left: 131px;
-    top: 456px;
-    font-family: 'Inter';
-    font-style: italic;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 39px;
-    text-align: center;
-    color: #000000;
-  }
-  
-  /* Username Field */
-  .username-field {
-    position: absolute;
-    width: 400px;
-    height: 60px;
-    left: 421px;
-    top: 456px;
-    color: #000000;
-    font-family: 'Inter';
-    font-size: 26px;
-    background: #FFFFFF;
-    border-radius: 10px;
-  }
-  
-  /* Event Name Label */
-  .event-name-label {
-    position: absolute;
-    width: 290px;
-    height: 60px;
-    left: 131px;
-    top: 846px;
-    font-family: 'Inter';
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 39px;
-    text-align: center;
-    color: #000000;
-  }
-  
-  /* Event Name Field */
-  .event-name-field {
-    position: absolute;
-    width: 400px;
-    height: 60px;
-    left: 421px;
-    top: 846px;
-    color: #000000;
-    font-family: 'Inter';
-    font-size: 26px;
-    background: #FFFFFF;
-    border-radius: 10px;
-  }
-  
-  /* Delete Event Button */
-  .delete-event-button {
-    position: absolute;
-    width: 360px;
-    height: 60px;
-    left: 360px;
-    top: 961px;
-    background: #FFFFFF;
-    border-radius: 20px;
-  }
-  
-  /* Delete Event Label */
-  .delete-event-label {
-    position: absolute;
-    width: 331px;
-    height: 38px;
-    left: 10px;
-    top: 10px;
-    font-family: 'Inter';
-    font-style: italic;
-    font-weight: 300;
-    font-size: 26px;
-    line-height: 39px;
-    text-align: center;
-    color: #000000;
-  }
-  
-  /* Delete User Button */
-  .delete-user-button {
-    position: absolute;
-    width: 360px;
-    height: 60px;
-    left: 360px;
-    top: 605px;
-    background: #FFFFFF;
-    border-radius: 20px;
-  }
-  
-  /* Delete User Label */
-  .delete-user-label {
-    position: absolute;
-    width: 331px;
-    height: 38px;
-    left: 10px;
-    top: 10px;
-    font-family: 'Inter';
-    font-style: italic;
-    font-weight: 300;
-    font-size: 26px;
-    line-height: 39px;
-    text-align: center;
-    color: #000000;
-  }
-  
-  /* Kullanıcı Seçici */
-.user-selector {
-    position: absolute;
-    width: 400px;
-    left: 975px;
-    top: 400px; /* Y koordinatını ayarlayın */
-  }
-  
-  .user-selector select {
+  /* Form Container */
+  .form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* İki sütunlu düzen */
+    gap: 20px; /* Elemanlar arasında boşluk */
     width: 100%;
-    height: 80px;
+    max-width: 1000px;
+    margin-bottom: 40px;
+  }
+  
+  /* Form Elements */
+  .form-container label {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 32px;
+    color: #000000;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .form-container select,
+  .form-container input {
+    width: 100%;
+    height: 60px;
     font-family: 'Inter';
     font-size: 20px;
     color: #000000;
@@ -173,13 +69,31 @@
     padding: 10px;
   }
   
-  /* Kullanıcı Seçimi için label */
-  .user-selector label {
+  /* Button Container */
+  .button-container {
+    display: flex;
+    gap: 20px; /* Butonlar arasında boşluk */
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .delete-user-button,
+  .delete-event-button {
+    width: 200px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #000000;
     font-family: 'Inter';
+    font-style: italic;
     font-weight: 300;
-    font-size: 32px;
+    font-size: 20px;
     color: #000000;
-    display: block;
-    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .delete-user-button:hover,
+  .delete-event-button:hover {
+    background: #F3F3F3; /* Hover efekti */
   }
   

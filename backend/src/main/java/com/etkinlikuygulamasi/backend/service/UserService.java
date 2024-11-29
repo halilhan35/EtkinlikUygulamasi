@@ -97,4 +97,15 @@ public class UserService {
         return userRepository.findAll();
     }    
 
+    public void deleteUser(int userId) {
+        Optional<User> userOpt = userRepository.findById(userId);
+        if (userOpt.isPresent()) {
+            User user = userOpt.get();
+            userRepository.delete(user);
+            logger.info("User with ID {} deleted successfully.", userId);
+        } else {
+            throw new IllegalStateException("User not found");
+        }
+    }
+
 }

@@ -60,4 +60,17 @@ public class MessageController {
         messageService.deleteMessage(id);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/user/{userID}")
+    public ResponseEntity<Void> deleteMessagesByUserID(@PathVariable int userID) {
+        messageService.deleteMessagesByUserID(userID);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/event/{eventID}")
+    public ResponseEntity<Void> deleteMessagesByEventID(@PathVariable int eventID) {
+        messageService.deleteMessagesByEventID(eventID);
+        return ResponseEntity.noContent().build();
+    }
+
 }

@@ -51,4 +51,16 @@ public class ParticipantController {
         return ResponseEntity.ok(eventIds);
     }
 
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<Void> deleteParticipantsByUserId(@PathVariable int userId) {
+        participantService.deleteParticipantsByUserId(userId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/event/{eventId}")
+    public ResponseEntity<Void> deleteParticipantsByEventId(@PathVariable int eventId) {
+        participantService.deleteParticipantsByEventId(eventId);
+        return ResponseEntity.noContent().build();
+    }
+
 }
