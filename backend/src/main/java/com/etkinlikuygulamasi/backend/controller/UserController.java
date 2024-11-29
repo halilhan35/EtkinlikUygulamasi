@@ -3,6 +3,9 @@ package com.etkinlikuygulamasi.backend.controller;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +31,7 @@ import com.etkinlikuygulamasi.backend.service.UserService;
 public class UserController {
 
     private final UserService userService;
-    
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
@@ -51,15 +54,20 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
+    public ResponseEntity<Map<String, Integer>> registerUser(@RequestBody User user) {
         try {
             User registeredUser = userService.registerUser(user);
-            return ResponseEntity.status(201).body("Registration successful.");
+
+            // JSON yanıt olarak { "id": registeredUser.getId() } döndür
+            Map<String, Integer> response = new HashMap<>();
+            response.put("id", registeredUser.getId());
+
+            return ResponseEntity.status(201).body(response);
         } catch (IllegalStateException e) {
-            return ResponseEntity.status(400).body(e.getMessage());
+            return ResponseEntity.status(400).body(null);
         } catch (Exception e) {
-            e.printStackTrace(); // Hata ayrıntılarını görmek için
-            return ResponseEntity.status(500).body("An error occurred during registration.");
+            e.printStackTrace();
+            return ResponseEntity.status(500).body(null);
         }
     }
 
@@ -108,6 +116,12 @@ public class UserController {
     public ResponseEntity<Boolean> checkUserExists(@PathVariable String username) {
         boolean exists = userService.checkIfUserExists(username);
         return ResponseEntity.ok(exists);
+    }
+
+    @GetMapping("/getAllUsers")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
     }
 
 }

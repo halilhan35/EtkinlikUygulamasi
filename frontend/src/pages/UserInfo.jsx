@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../styles/Register.css";
+import "../styles/UserInfo.css";
 
 const UserInfo = () => {
   const [userData, setUserData] = useState({
+    userId: "", // userId'yi ekledik
     username: "",
     password: "",
     email: "",
@@ -15,17 +16,35 @@ const UserInfo = () => {
     gender: "",
     number: "",
     profilePhotoPath: "",
+    points: 0, // Puan bilgisi
   });
 
   // localStorage'dan veriyi çekiyoruz
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    console.log("Stored User:", storedUser);
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUserData(parsedUser);
+      // Kullanıcının puanlarını API'den al
+      fetchUserPoints(parsedUser.id); // userId kullanıyoruz
     }
   }, []);
+
+  const fetchUserPoints = async (userId) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/points/user/${userId}/total`
+      ); // userId'yi gönderiyoruz
+      if (response.status === 200) {
+        setUserData((prevData) => ({
+          ...prevData,
+          points: response.data, // Puanları güncelle
+        }));
+      }
+    } catch (error) {
+      console.error("Error fetching points:", error);
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -34,24 +53,21 @@ const UserInfo = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put("http://localhost:8080/user/update", userData);
-  
+      const response = await axios.put(
+        "http://localhost:8080/user/update",
+        userData
+      );
+
       if (response.status === 200) {
-        // Güncellenmiş kullanıcı bilgilerini al
         const updatedUser = response.data;
-        console.log("User updated:", updatedUser);
-  
-        // localStorage'ı güncelle
         localStorage.setItem("user", JSON.stringify(updatedUser));
-  
-        // Kullanıcıya başarı mesajı göster
         alert("User information updated successfully!");
       }
     } catch (error) {
       console.error("Error updating user:", error);
       alert("There was an error updating the user.");
     }
-  };  
+  };
 
   return (
     <div className="user-info-container">
@@ -61,6 +77,15 @@ const UserInfo = () => {
         className="user-icon"
         style={{ backgroundImage: `url(${userData.profilePhotoPath})` }}
       ></div>
+
+      <div className="label Point">Points:</div>
+      <input
+        type="text"
+        name="points"
+        value={userData.points || ""}
+        className="input-field Rectangle14"
+        readOnly
+      />
 
       <div className="label Username">Username:</div>
       <input

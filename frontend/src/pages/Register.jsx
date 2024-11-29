@@ -25,7 +25,6 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Dosya yükleme değişikliği
   const handleFileChange = (e) => {
     setProfilePhoto(e.target.files[0]);
   };
@@ -52,27 +51,40 @@ const Register = () => {
     try {
       // Kullanıcı bilgilerini gönderiyoruz
       const userResponse = await axios.post('http://localhost:8080/user/register', formData);
-      const userId = userResponse.data.id;
-  
+      
+      // JSON yanıtı alıp ID'yi çıkarıyoruz
+      const userId = userResponse?.data?.id;
+      console.log('User ID:', userId); // Log the extracted user ID
+      console.log('User response:', userResponse); // Log the full response object
+    
+      if (userId) {
+        // Puan kaydını gönderiyoruz
+        await axios.post('http://localhost:8080/points/register', userId , {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+      }
+    
       // Profil fotoğrafını yüklüyoruz (varsa)
       if (profilePhoto && userId) {
         const formDataPhoto = new FormData();
         formDataPhoto.append('file', profilePhoto); // Fotoğrafın doğru yüklendiğini kontrol et
         formDataPhoto.append('userId', userId);
-  
+    
         console.log("FormData being sent:", formDataPhoto); // FormData içeriğini kontrol et
-  
+    
         await axios.post('http://localhost:8080/user/uploadPhoto', formDataPhoto, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
       }
-  
+    
       alert('Registration successful.');
       navigate('/');
     } catch (error) {
       console.error('Registration failed:', error.response ? error.response.data : error.message);
       alert(error.response?.data?.message || 'An error occurred during registration.');
-    }
+    }    
   };
   
   return (

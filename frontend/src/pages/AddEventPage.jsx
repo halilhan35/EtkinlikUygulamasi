@@ -63,6 +63,12 @@ const AddEventPage = () => {
       // Oluşturucu ekle
       await axios.post('http://localhost:8080/creators/add', creatorData);
 
+      await axios.post('http://localhost:8080/points/addevent', participantId, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       alert('Event added. Participant and Creator registered successfully!');
 
     setEventName('');

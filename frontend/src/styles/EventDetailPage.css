@@ -58,6 +58,50 @@
     text-align: center;
   }
   
+  /* Mesajların Kaydırılabilir Alanı */
+  .message-container {
+    max-height:550px;
+    overflow-y: auto;
+    background: #FFFFFF;
+    font-family: 'Inter';
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    margin-bottom: 5px;
+  }
+  
+  /* Mesaj Giriş Alanı */
+  .message-input-section {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .message-input {
+    width: 300px;
+    height: 40px;
+    padding: 5px;
+    background: #FFFFFF;
+    font-family: 'Inter';
+    color: #000000;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+  }
+  
+  .send-button {
+    padding: 5px 10px;
+    background: #FFFFFF;
+    color: #000000;
+    font-family: 'Inter';
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
   /* Form Etiketleri */
   .label {
     font-family: 'Inter';

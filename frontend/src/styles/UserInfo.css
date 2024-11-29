@@ -60,6 +60,50 @@
   left: 25px;
 }
 
+.Point {
+  top: 748px; /* Rectangle14 ile hizalı, en üstte */
+}
+
+.Username {
+  top: 841px; /* Rectangle2 ile hizalı */
+}
+
+.Password {
+  top: 935px; /* Rectangle5 ile hizalı */
+}
+
+.Email {
+  top: 1029px; /* Rectangle6 ile hizalı */
+}
+
+.Location {
+  top: 1123px; /* Rectangle7 ile hizalı */
+}
+
+.AreasOfInterest {
+  top: 1217px; /* Rectangle8 ile hizalı */
+}
+
+.Name {
+  top: 1311px; /* Rectangle9 ile hizalı */
+}
+
+.Surname {
+  top: 1395px; /* Rectangle10 ile hizalı */
+}
+
+.DateOfBirth {
+  top: 1478px; /* Rectangle11 ile hizalı */
+}
+
+.Gender {
+  top: 1569px; /* Rectangle12 ile hizalı */
+}
+
+.Number {
+  top: 1653px; /* Rectangle13 ile hizalı */
+}
+
 .input-field {
   position: absolute;
   width: 800px;
@@ -75,35 +119,38 @@
 }
 
 /* Input Alanlarının Konumu */
-.Rectangle2 {
-  top: 748px;
+.Rectangle14{
+  top : 748px;
 }
-.Rectangle5 {
+.Rectangle2 {
   top: 841px;
 }
-.Rectangle6 {
+.Rectangle5 {
   top: 935px;
 }
-.Rectangle7 {
+.Rectangle6 {
   top: 1029px;
 }
-.Rectangle8 {
+.Rectangle7 {
   top: 1123px;
 }
-.Rectangle9 {
+.Rectangle8 {
   top: 1217px;
 }
-.Rectangle10 {
+.Rectangle9 {
   top: 1311px;
 }
-.Rectangle11 {
+.Rectangle10 {
   top: 1395px;
 }
-.Rectangle12 {
+.Rectangle11 {
   top: 1478px;
 }
-.Rectangle13 {
+.Rectangle12 {
   top: 1569px;
+}
+.Rectangle13 {
+  top: 1653px;
 }
 
 /* Butonlar */
@@ -112,7 +159,7 @@
   width: 420px;
   height: 80px;
   left: 510px;
-  top: 1688px;
+  top: 1800px;
   background: #ffffff;
   border-radius: 20px;
 }
@@ -127,7 +174,7 @@
   font-family: "Inter";
   font-style: italic;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 48px;
   text-align: center;
   color: #000000;

@@ -124,8 +124,13 @@ const JoinEventPage = () => {
       };
   
       await axios.post('http://localhost:8080/participants/add', participantData);
-  
-      alert("Participant registered for the event successfully!");
+      await axios.post('http://localhost:8080/points/add', participantId, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      alert("Participant registered for the event and points added successfully!");
   
       await fetchEvents(participantId);
   

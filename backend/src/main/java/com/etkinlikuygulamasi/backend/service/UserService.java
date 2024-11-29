@@ -1,5 +1,6 @@
 package com.etkinlikuygulamasi.backend.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -91,5 +92,9 @@ public class UserService {
     public boolean checkIfUserExists(String username) {
         return userRepository.existsByUsername(username);  // Kullanıcı adı ile kontrol
     }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }    
 
 }
