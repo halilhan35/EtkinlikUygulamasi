@@ -18,10 +18,10 @@ public class ParticipantService {
 
     public Participant addParticipant(int eventId, int participantId) {
         Participant participant = new Participant();
-        participant.setEventId(eventId); // Etkinlik ID'si
-        participant.setParticipantId(participantId); // Katılımcı ID'si
+        participant.setEventId(eventId);
+        participant.setParticipantId(participantId);
 
-        return participantRepository.save(participant); // Katılımcıyı kaydediyoruz
+        return participantRepository.save(participant);
     }
 
     // Katılımcının bağlı olduğu etkinlikleri döndüren metod

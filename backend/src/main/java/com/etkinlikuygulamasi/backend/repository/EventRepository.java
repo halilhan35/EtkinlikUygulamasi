@@ -10,9 +10,9 @@ import com.etkinlikuygulamasi.backend.model.Event;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Integer> {
-    Optional<Event> findByEventName(String eventName); // eventName ile sorgulama
+    Optional<Event> findByEventName(String eventName);
     List<Event> findByEventCategory(String eventCategory);
     List<Event> findByEventLocation(String eventLocation);
-    boolean existsByEventName(String eventName); // eventName ile kontrol et
+    boolean existsByEventName(String eventName);
     List<Event> findByEventDate(String eventDate);
 }

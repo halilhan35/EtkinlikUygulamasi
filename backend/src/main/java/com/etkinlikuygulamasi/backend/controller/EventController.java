@@ -66,11 +66,11 @@ public class EventController {
         Optional<Event> existingEvent = eventService.getEventById(id);
 
         if (existingEvent.isPresent()) {
-            event.setId(id); // Güncellenen etkinliğin ID'sini set ediyoruz
-            Event updatedEvent = eventService.updateEvent(event); // Güncellenmiş event
+            event.setId(id);
+            Event updatedEvent = eventService.updateEvent(event);
             return ResponseEntity.ok(updatedEvent);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Eğer etkinlik bulunmazsa 404 döner
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 

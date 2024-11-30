@@ -130,7 +130,6 @@ const DeleteEventPage = () => {
         prevEvents.filter((event) => event.id !== formData.eventId)
       );
 
-      // Formu sıfırla
       setFormData({
         eventId: "",
         eventName: "",
@@ -164,9 +163,9 @@ const DeleteEventPage = () => {
           {events.map((event) => (
             <option key={event.id} value={event.id}>
               {" "}
-              {/* Benzersiz key olarak event.id kullanıyoruz */}
+              {}
               {event.eventName}{" "}
-              {/* Etkinlik adı veya başka bir bilgi de yazılabilir */}
+              {}
             </option>
           ))}
         </select>

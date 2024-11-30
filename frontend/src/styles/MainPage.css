@@ -1,4 +1,3 @@
-/* MainPage.css */
 
 * {
   box-sizing: border-box;
@@ -13,7 +12,6 @@
   z-index: 0;
 }
 
-/* EVENT APP */
 .event-app {
   position: absolute;
   width: 888px;
@@ -29,7 +27,6 @@
   color: #000000;
 }
 
-/* engineer */
 .engineer {
   position: absolute;
   width: 64px;
@@ -40,7 +37,6 @@
   background-size: cover;
 }
 
-/* account-settings */
 .account-settings {
   position: absolute;
   width: 64px;
@@ -51,7 +47,6 @@
   background-size: cover;
 }
 
-/* events_rectangle */
 .events-rectangle {
   position: absolute;
   width: 1300px;
@@ -62,7 +57,6 @@
   border-radius: 30px;
 }
 
-/* add_event */
 .add-event {
   position: absolute;
   width: 260px;
@@ -73,7 +67,6 @@
   border-radius: 20px;
 }
 
-/* update_event */
 .update-event {
   position: absolute;
   width: 260px;
@@ -84,7 +77,6 @@
   border-radius: 20px;
 }
 
-/* delete_event */
 .delete-event {
   position: absolute;
   width: 240px;
@@ -95,7 +87,6 @@
   border-radius: 20px;
 }
 
-/* join_event */
 .join-event {
   position: absolute;
   width: 240px;
@@ -106,7 +97,6 @@
   border-radius: 20px;
 }
 
-/* ADD EVENT */
 .add-event-text {
   position: absolute;
   width: 183px;
@@ -122,7 +112,6 @@
   color: #000000;
 }
 
-/* UPDATE EVENT */
 .update-event-text {
   position: absolute;
   width: 183px;
@@ -138,7 +127,6 @@
   color: #000000;
 }
 
-/* DELETE EVENT */
 .delete-event-text {
   position: absolute;
   width: 183px;
@@ -154,7 +142,6 @@
   color: #000000;
 }
 
-/* JOIN EVENT */
 .join-event-text {
   position: absolute;
   width: 183px;
@@ -170,7 +157,6 @@
   color: #000000;
 }
 
-/* user-events */
 .user-events {
   position: absolute;
   width: 1300px;

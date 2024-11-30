@@ -17,8 +17,8 @@ public class PointService {
     public void addPointsForUser(int userId) {
         Point newPoint = new Point();
         newPoint.setUserID(userId);
-        newPoint.setPoints(10); // Etkinliğe katılım için 10 puan
-        newPoint.setEarnedDate(LocalDateTime.now().toString()); // Şu anki tarih
+        newPoint.setPoints(10);
+        newPoint.setEarnedDate(LocalDateTime.now().toString());
 
         pointRepository.save(newPoint);
     }

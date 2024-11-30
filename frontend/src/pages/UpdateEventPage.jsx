@@ -35,10 +35,10 @@ const UpdateEventPage = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       const userId = user.id;
-      fetchEvents(userId);  // Kullanıcı ID'sini göndererek etkinlikleri al
+      fetchEvents(userId);  // Kullanıcı ID'sini göndererek etkinlikleri alıyoruz
     } else {
       console.error('User not found in localStorage');
-      navigate('/login'); // Kullanıcıyı login sayfasına yönlendir
+      navigate('/login'); // Kullanıcıyı login sayfasına yönlendiriyoruz
     }
   }, []);
 

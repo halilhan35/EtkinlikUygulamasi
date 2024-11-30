@@ -4,7 +4,7 @@ import "../styles/UserInfo.css";
 
 const UserInfo = () => {
   const [userData, setUserData] = useState({
-    userId: "", // userId'yi ekledik
+    userId: "",
     username: "",
     password: "",
     email: "",
@@ -16,7 +16,7 @@ const UserInfo = () => {
     gender: "",
     number: "",
     profilePhotoPath: "",
-    points: 0, // Puan bilgisi
+    points: 0,
   });
 
   // localStorage'dan veriyi çekiyoruz
@@ -25,7 +25,7 @@ const UserInfo = () => {
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUserData(parsedUser);
-      // Kullanıcının puanlarını API'den al
+      // Kullanıcının puanlarını API'den alıyoruz
       fetchUserPoints(parsedUser.id); // userId kullanıyoruz
     }
   }, []);
@@ -38,7 +38,7 @@ const UserInfo = () => {
       if (response.status === 200) {
         setUserData((prevData) => ({
           ...prevData,
-          points: response.data, // Puanları güncelle
+          points: response.data, // Puanları güncelleyirouz
         }));
       }
     } catch (error) {

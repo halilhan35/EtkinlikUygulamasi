@@ -7,7 +7,6 @@ import com.etkinlikuygulamasi.backend.model.Admin;
 
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Integer> {
-    // Hem kullanıcı adı hem de e-posta ile doğrulama için ayrı metodlar
     Admin findByAdminNameAndAdminPassword(String adminName, String adminPassword);
     Admin findByAdminEmailAndAdminPassword(String adminEmail, String adminPassword);
 }

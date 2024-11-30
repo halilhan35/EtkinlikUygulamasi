@@ -1,4 +1,4 @@
-/* Admin Page Container */
+
 .admin-page {
     position: relative;
     width: 1440px;
@@ -12,7 +12,7 @@
     align-items: center;
   }
   
-  /* Admin Page Header */
+
   .admin-page-header {
     font-family: 'Inter';
     font-style: italic;
@@ -21,10 +21,9 @@
     line-height: 97px;
     text-align: center;
     color: #000000;
-    margin-bottom: 30px; /* Altındaki elemanlarla boşluk bırak */
+    margin-bottom: 30px;
   }
   
-  /* Event App Header */
   .event-app-header {
     font-family: 'Inter';
     font-style: italic;
@@ -36,17 +35,15 @@
     margin-bottom: 50px;
   }
   
-  /* Form Container */
   .form-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* İki sütunlu düzen */
-    gap: 20px; /* Elemanlar arasında boşluk */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; 
     width: 100%;
     max-width: 1000px;
     margin-bottom: 40px;
   }
   
-  /* Form Elements */
   .form-container label {
     font-family: 'Inter';
     font-weight: 300;
@@ -69,10 +66,9 @@
     padding: 10px;
   }
   
-  /* Button Container */
   .button-container {
     display: flex;
-    gap: 20px; /* Butonlar arasında boşluk */
+    gap: 20px;
     justify-content: center;
     margin-top: 20px;
   }
@@ -94,6 +90,6 @@
   
   .delete-user-button:hover,
   .delete-event-button:hover {
-    background: #F3F3F3; /* Hover efekti */
+    background: #F3F3F3;
   }
   

@@ -16,14 +16,14 @@ public class CreatorService {
 
     public Creator addCreator(int eventId, int creatorId) {
         Creator creator = new Creator();
-        creator.setEventId(eventId); // Etkinlik ID'si
-        creator.setCreatorId(creatorId); // Katılımcı ID'si
+        creator.setEventId(eventId);
+        creator.setCreatorId(creatorId);
 
-        return creatorRepository.save(creator); // Katılımcıyı kaydediyoruz
+        return creatorRepository.save(creator);
     }
 
     public List<Creator> getEventsByCreatorId(int creatorId) {
-        return creatorRepository.findByCreatorId(creatorId); // CreatorId'ye göre sorgu
+        return creatorRepository.findByCreatorId(creatorId);
     }
 
     public void deleteCreatorsByUserId(int userId) {

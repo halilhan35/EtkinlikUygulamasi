@@ -4,12 +4,12 @@ import '../styles/AdminPage.css';
 
 const AdminPage = () => {
   const [users, setUsers] = useState([]);
-  const [events, setEvents] = useState([]); // Yeni etkinlikler state'i
+  const [events, setEvents] = useState([]);
   const [selectedUser, setSelectedUser] = useState('');
   const [selectedEvent, setSelectedEvent] = useState('');
   const [shouldRefetchUsers, setShouldRefetchUsers] = useState(false);
 
-  // Kullanıcı listesini çekmek için useEffect
+  // Kullanıcı listesini çekmek için
   useEffect(() => {
     axios.get('http://localhost:8080/user/getAllUsers')
       .then(response => {
@@ -21,7 +21,7 @@ const AdminPage = () => {
       });
   }, [shouldRefetchUsers]); // shouldRefetchUsers değiştiğinde listeyi yeniden yüklemek için
 
-  // Etkinlik listesini çekmek için useEffect
+  // Etkinlik listesini çekmek için
   useEffect(() => {
     axios.get('http://localhost:8080/events')
       .then(response => {
@@ -145,9 +145,9 @@ const AdminPage = () => {
       <div className="event-app-header">Event App</div>
       <div className="admin-page-header">Admin Page</div>
   
-      {/* Form Container */}
+      {}
       <div className="form-container">
-        {/* Kullanıcı Seçici */}
+        {}
         <div>
           <label htmlFor="user-selector">Select User:</label>
           <select id="user-selector" onChange={handleUserSelect}>
@@ -160,7 +160,7 @@ const AdminPage = () => {
           </select>
         </div>
   
-        {/* Etkinlik Seçici */}
+        {}
         <div>
           <label htmlFor="event-selector">Select Event:</label>
           <select id="event-selector" onChange={handleEventSelect}>
@@ -173,7 +173,7 @@ const AdminPage = () => {
           </select>
         </div>
 
-        {/* Kullanıcı İsmi */}
+        {}
         <div>
           <label htmlFor="username-field">Username:</label>
           <input
@@ -185,7 +185,7 @@ const AdminPage = () => {
           />
         </div>
   
-        {/* Etkinlik İsmi */}
+        {}
         <div>
           <label htmlFor="event-name-field">Event Name:</label>
           <input
@@ -198,7 +198,7 @@ const AdminPage = () => {
         </div>
       </div>
   
-      {/* Butonlar */}
+      {}
       <div className="button-container">
         <button className="delete-user-button" onClick={handleDeleteUser}>
           Delete User

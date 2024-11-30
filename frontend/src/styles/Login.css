@@ -1,4 +1,3 @@
-/* Genel Ayarlar */
 * {
   box-sizing: border-box;
 }
@@ -6,16 +5,15 @@
 body {
   margin: 0;
   padding: 0;
-  padding-top: 40px; /* Üstten boşluk */
+  padding-top: 40px;
   background: #FFEDD5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Üstten hizalama */
+  justify-content: flex-start;
   height: 100vh;
 }
 
-/* Başlık */
 .event-app-title {
   font-family: 'Inter';
   font-style: italic;
@@ -26,7 +24,6 @@ body {
   margin: 20px 0;
 }
 
-/* Login Başlığı */
 .login-title {
   font-family: 'Inter';
   font-style: italic;
@@ -37,7 +34,6 @@ body {
   margin: 20px 0;
 }
 
-/* Kullanıcı Adı ve Şifre Alanları */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -47,7 +43,6 @@ body {
   margin-top: 10px;
 }
 
-/* Kullanıcı Adı veya E-posta */
 .username-email, .password {
   font-family: 'Inter';
   font-style: italic;
@@ -58,7 +53,6 @@ body {
   margin: 10px 0;
 }
 
-/* Input Alanları */
 .input-rectangle {
   width: 100%;
   max-width: 240px;
@@ -70,7 +64,6 @@ body {
   margin-top: 5px;
 }
 
-/* Input Alanı */
 .input-field {
   width: 90%;
   height: 100%;
@@ -83,7 +76,6 @@ body {
   background-color: transparent;
 }
 
-/* Giriş Butonu Alanı */
 .login-button-container {
   width: 100%;
   display: flex;
@@ -91,7 +83,6 @@ body {
   margin-top: 30px;
 }
 
-/* Giriş Butonu */
 .login-button {
   width: 100%;
   max-width: 200px;
@@ -108,7 +99,6 @@ body {
   cursor: pointer;
 }
 
-/* Kayıt Olma Mesajı */
 .register-message {
   font-family: 'Inter';
   font-style: italic;

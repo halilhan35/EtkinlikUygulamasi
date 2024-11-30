@@ -38,7 +38,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    // Login işlemi için endpoint
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User loginUser) {
         // Kullanıcıyı doğrulama

@@ -10,7 +10,6 @@ public class ParticipantId implements Serializable {
     private int participantId;
     private int eventId;
 
-    // Getter ve Setter metodları
     public int getParticipantId() {
         return participantId;
     }
@@ -27,7 +26,6 @@ public class ParticipantId implements Serializable {
         this.eventId = eventId;
     }
 
-    // equals() ve hashCode() metotları da implement edilmelidir
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

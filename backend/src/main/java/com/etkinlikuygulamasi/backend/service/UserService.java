@@ -50,16 +50,16 @@ public class UserService {
     }
 
     public void updateProfilePhotoPath(int userId, String profilePhotoPath) {
-        logger.info("Updating profile photo path for userId: {}", userId);  // Info log
+        logger.info("Updating profile photo path for userId: {}", userId);
         Optional<User> userOpt = userRepository.findById(userId);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
-            logger.info("Current profile photo path: {}", user.getProfilePhotoPath());  // Info log
+            logger.info("Current profile photo path: {}", user.getProfilePhotoPath());
             user.setProfilePhotoPath(profilePhotoPath);
             userRepository.save(user);
-            logger.info("Updated profile photo path to: {}", profilePhotoPath);  // Info log
+            logger.info("Updated profile photo path to: {}", profilePhotoPath);
         } else {
-            logger.error("User with ID {} not found.", userId);  // Error log
+            logger.error("User with ID {} not found.", userId);
         }
     }
 
@@ -82,7 +82,6 @@ public class UserService {
             existingUser.setNumber(updatedUser.getNumber());
             existingUser.setProfilePhotoPath(updatedUser.getProfilePhotoPath());
 
-            // Güncellenmiş kullanıcıyı kaydet
             return userRepository.save(existingUser);
         } else {
             throw new IllegalStateException("User not found");
@@ -90,7 +89,7 @@ public class UserService {
     }
 
     public boolean checkIfUserExists(String username) {
-        return userRepository.existsByUsername(username);  // Kullanıcı adı ile kontrol
+        return userRepository.existsByUsername(username);
     }
 
     public List<User> getAllUsers() {

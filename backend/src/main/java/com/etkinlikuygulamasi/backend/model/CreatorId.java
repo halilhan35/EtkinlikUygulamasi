@@ -10,7 +10,6 @@ public class CreatorId implements Serializable {
     private int creatorId;
     private int eventId;
 
-    // Getter ve Setter metodları
     public int getCreatorId() {
         return creatorId;
     }
@@ -27,7 +26,6 @@ public class CreatorId implements Serializable {
         this.eventId = eventId;
     }
 
-    // equals() ve hashCode() metotları da implement edilmelidir
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

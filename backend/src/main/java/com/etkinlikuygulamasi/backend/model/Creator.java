@@ -8,18 +8,17 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "creator")
-@IdClass(CreatorId.class)  // Bileşik anahtar sınıfını belirtin
+@IdClass(CreatorId.class)
 public class Creator {
 
     @Id
     @Column(name = "creatorid")
-    private int creatorId; // Katılımcı ID'si
+    private int creatorId;
 
     @Id
     @Column(name = "eventid")
-    private int eventId; // Etkinlik ID'si
+    private int eventId;
 
-    // Getter ve Setter metodları
     public int getCreatorId() {
         return creatorId;
     }

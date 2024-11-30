@@ -1,5 +1,4 @@
 
-/* Genel Ayarlar */
 * {
   box-sizing: border-box;
 }
@@ -13,7 +12,6 @@ body {
   border: 1px solid #000000;
 }
 
-/* Başlıklar */
 .EVENT_APP {
   position: absolute;
   width: 888px;
@@ -43,7 +41,6 @@ body {
   color: #000000;
 }
 
-/* Form Etiketleri */
 .label {
   font-family: 'Inter';
   font-weight: 300;
@@ -64,7 +61,6 @@ body {
 .EventLocation { top: 963px; left: 109px; }
 .EventCategory { top: 1064px; left: 109px; }
 
-/* Giriş Alanları */
 .input-field {
   position: absolute;
   width: 400px;
@@ -87,7 +83,6 @@ body {
 .EventLocationField { top: 963px; }
 .EventCategoryField { top: 1064px; }
 
-/* Butonlar */
 .delete_event {
   position: absolute;
   width: 320px;
@@ -112,7 +107,6 @@ body {
   color: #000000;
 }
 
-/* Event Seçici */
 .event-selector {
   position: absolute;
   width: 400px;
@@ -132,7 +126,6 @@ body {
   padding: 10px;
 }
 
-/* Event Seçimi için label */
 .event-selector label {
   font-family: 'Inter';
   font-weight: 300;

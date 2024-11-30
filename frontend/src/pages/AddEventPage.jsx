@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // axios ile HTTP isteği göndereceğiz
+import axios from 'axios';
 import '../styles/AddEventPage.css';
 
 const AddEventPage = () => {
-  // State tanımlamaları
   const [eventName, setEventName] = useState('');
   const [eventDescription, setEventDescription] = useState('');
   const [eventDate, setEventDate] = useState('');
@@ -12,21 +11,17 @@ const AddEventPage = () => {
   const [eventLocation, setEventLocation] = useState('');
   const [eventCategory, setEventCategory] = useState('');
 
-  // Hata mesajı durumu
   const [error, setError] = useState('');
 
-  // Formu gönderme işlemi
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const user = JSON.parse(localStorage.getItem("user"));
-    // localStorage'dan userId almak
     const participantId = user ? user.id : null;
 
-    // Gerekli alanlar kontrolü
     if (!eventName || !eventDescription || !eventDate || !eventTime || !eventLocation || !eventCategory) {
       alert('Please fill in all the required fields.');
-      return; // Hatalı form gönderimini engelle
+      return;
     }
 
     const eventData = {

@@ -175,7 +175,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      {/* Kullanıcının etkinliklerini listele */}
+      {}
       <div className="user-events">
         <h2>Your Events</h2>
         {userEvents.length > 0 ? (
@@ -194,7 +194,7 @@ const MainPage = () => {
         )}
       </div>
 
-      {/* Google Maps */}
+      {}
       <div className="map-container">
         {isLoaded ? (
           <GoogleMap
@@ -202,22 +202,22 @@ const MainPage = () => {
             center={mapCenter}
             zoom={8}
           >
-            {/* Kullanıcının konumunu işaretleyen marker */}
+            {}
             <MarkerF
               position={mapCenter}
               icon={{
-                path: google.maps.SymbolPath.CIRCLE, // Çember sembolü
-                scale: 5, // Çemberin boyutu
-                fillColor: "#0000FF", // Mavi renk
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 5,
+                fillColor: "#0000FF",
                 fillOpacity: 1,
-                strokeWeight: 0, // Kenar çizgisi olmaması için
+                strokeWeight: 0,
               }}
               title="Your Location"
             />
-            ;{/* Etkinliklerin konumlarını işaretleyen markerlar */}
+            ;{}
             {userEvents.map((event, index) => (
               <MarkerF
-                key={event.id} // Ensure `event.id` is unique
+                key={event.id}
                 position={{
                   lat: Number(event.eventlocationlat),
                   lng: Number(event.eventlocationlon),

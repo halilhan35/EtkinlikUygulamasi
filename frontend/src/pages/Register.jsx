@@ -45,7 +45,7 @@ const Register = () => {
       !formData.number
     ) {
       alert('Please fill in all fields.');
-      return; // Formu gönderme
+      return;
     }
 
     try {
@@ -54,8 +54,8 @@ const Register = () => {
       
       // JSON yanıtı alıp ID'yi çıkarıyoruz
       const userId = userResponse?.data?.id;
-      console.log('User ID:', userId); // Log the extracted user ID
-      console.log('User response:', userResponse); // Log the full response object
+      console.log('User ID:', userId);
+      console.log('User response:', userResponse);
     
       if (userId) {
         // Puan kaydını gönderiyoruz
@@ -69,10 +69,10 @@ const Register = () => {
       // Profil fotoğrafını yüklüyoruz (varsa)
       if (profilePhoto && userId) {
         const formDataPhoto = new FormData();
-        formDataPhoto.append('file', profilePhoto); // Fotoğrafın doğru yüklendiğini kontrol et
+        formDataPhoto.append('file', profilePhoto);
         formDataPhoto.append('userId', userId);
     
-        console.log("FormData being sent:", formDataPhoto); // FormData içeriğini kontrol et
+        console.log("FormData being sent:", formDataPhoto);
     
         await axios.post('http://localhost:8080/user/uploadPhoto', formDataPhoto, {
           headers: { 'Content-Type': 'multipart/form-data' }
@@ -92,7 +92,7 @@ const Register = () => {
       <div className="EVENT_APP">EVENT APP</div>
       <div className="REGISTER">REGISTER</div>
 
-      {/* Profil Fotoğrafı Yükleme Alanı */}
+      {}
       <label htmlFor="file-input" className="user-icon">
         {profilePhoto ? (
           <img

@@ -24,7 +24,6 @@ public class ParticipantController {
     @Autowired
     private ParticipantService participantService;
 
-    // Participant nesnesi yerine eventId ve participantId alıyoruz
     @PostMapping("/add")
     public Participant addParticipant(@RequestBody Participant participantDto) {
         return participantService.addParticipant(participantDto.getEventId(), participantDto.getParticipantId());

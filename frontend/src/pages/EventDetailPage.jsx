@@ -17,10 +17,9 @@ const EventDetailPage = () => {
 
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const [users, setUsers] = useState([]); // New state for storing user details
+  const [users, setUsers] = useState([]);
   const messageEndRef = useRef(null);
 
-  // Fetch all users from the server
   const fetchUsers = async () => {
     try {
       const response = await fetch("http://localhost:8080/user/getAllUsers");
@@ -35,7 +34,6 @@ const EventDetailPage = () => {
     }
   };
 
-  // Fetch messages for a given event ID
   const fetchMessagesByEventID = async (eventId) => {
     if (!eventId) {
       console.error("No eventId provided for fetching messages.");
@@ -61,7 +59,7 @@ const EventDetailPage = () => {
   };
 
   useEffect(() => {
-    fetchUsers(); // Fetch users when the component mounts
+    fetchUsers();
 
     const eventDetails = JSON.parse(localStorage.getItem("event"));
     if (!eventDetails) {
@@ -132,7 +130,7 @@ const EventDetailPage = () => {
       }
 
       const savedMessage = await response.json();
-      console.log("API response:", savedMessage); // Added for debugging
+      console.log("API response:", savedMessage);
       setMessages([...messages, savedMessage]);
       setNewMessage("");
     } catch (error) {
@@ -140,7 +138,6 @@ const EventDetailPage = () => {
     }
   };
 
-  // Helper function to get the username from the user ID
   const getUsername = (userId) => {
     const user = users.find((u) => u.id === userId);
     return user ? user.username : "Unknown";
@@ -156,7 +153,7 @@ const EventDetailPage = () => {
         <div className="message-container">
           {messages.map((msg, index) => (
             <p key={index} className="message">
-              {`${getUsername(msg.userID)}: ${msg.messageText}`} {/* Display username */}
+              {`${getUsername(msg.userID)}: ${msg.messageText}`} {}
             </p>
           ))}
           <div ref={messageEndRef} />

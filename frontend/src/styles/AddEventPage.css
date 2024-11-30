@@ -58,12 +58,12 @@
     left: 510px;
     background: #FFFFFF;
     border-radius: 10px;
-    color: #000000; /* Metin rengi siyah */
+    color: #000000;
     font-family: 'Inter';
     font-style: italic;
-    font-size: 24px; /* Metin boyutu */
-    padding: 10px; /* İçerik boşluğu */
-    border: 1px solid #CCCCCC; /* Kenar çizgisi */
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
   }
   
   .eventNameField { top: 471px; }
