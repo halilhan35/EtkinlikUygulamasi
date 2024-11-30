@@ -47,8 +47,13 @@ const JoinEventPage = () => {
           return eventDetails;
         })
       );
+
+    const uniqueEvents = eventsWithDetails.filter(
+      (event, index, self) =>
+        self.findIndex((e) => e.eventName === event.eventName) === index
+    );
   
-      setEvents(eventsWithDetails);
+      setEvents(uniqueEvents);
     } catch (error) {
       console.error("Error fetching event IDs for user:", error);
       if (error.response) {

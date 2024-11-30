@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  useLoadScript,
+  GoogleMap,
+  MarkerF,
+} from "@react-google-maps/api";
 import axios from "axios";
 import "../styles/MainPage.css";
 
@@ -7,6 +12,17 @@ const MainPage = () => {
   const navigate = useNavigate();
   const [role, setRole] = useState("");
   const [userEvents, setUserEvents] = useState([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 0, lng: 0 });
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyBl-LVjw0m_zACQqcB2tyy4io2tws6l31A",
+  });
+
+  const mapContainerStyle = {
+    width: "100%",
+    height: "400px",
+    borderRadius: "20px",
+    marginTop: "1000px",
+  };
 
   const fetchEventDetails = async (eventId) => {
     try {
@@ -43,6 +59,10 @@ const MainPage = () => {
       );
 
       setUserEvents(eventsWithDetails.filter(Boolean)); // null olmayan detayları ekle
+
+      if (user.locationlat && user.locationlon) {
+        setMapCenter({ lat: user.locationlat, lng: user.locationlon });
+      }
     } catch (error) {
       console.error("Error fetching events for user:", error);
     }
@@ -114,6 +134,8 @@ const MainPage = () => {
       eventDuration: event.eventDuration,
       eventLocation: event.eventLocation,
       eventCategory: event.eventCategory,
+      eventLocationLat: event.eventlocationlat,
+      eventLocationLon: event.eventlocationlon,
     };
 
     // event nesnesini localStorage'a kaydet
@@ -161,12 +183,51 @@ const MainPage = () => {
             {userEvents.map((event, index) => (
               <li key={index}>
                 <h3>{event.eventName}</h3>
-                <button onClick={() => handleEventDetailClick(event)}>Details</button>
+                <button onClick={() => handleEventDetailClick(event)}>
+                  Details
+                </button>
               </li>
             ))}
           </ul>
         ) : (
           <p>You have not joined any events yet.</p>
+        )}
+      </div>
+
+      {/* Google Maps */}
+      <div className="map-container">
+        {isLoaded ? (
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            center={mapCenter}
+            zoom={8}
+          >
+            {/* Kullanıcının konumunu işaretleyen marker */}
+            <MarkerF
+              position={mapCenter}
+              icon={{
+                path: google.maps.SymbolPath.CIRCLE, // Çember sembolü
+                scale: 5, // Çemberin boyutu
+                fillColor: "#0000FF", // Mavi renk
+                fillOpacity: 1,
+                strokeWeight: 0, // Kenar çizgisi olmaması için
+              }}
+              title="Your Location"
+            />
+            ;{/* Etkinliklerin konumlarını işaretleyen markerlar */}
+            {userEvents.map((event, index) => (
+              <MarkerF
+                key={event.id} // Ensure `event.id` is unique
+                position={{
+                  lat: Number(event.eventlocationlat),
+                  lng: Number(event.eventlocationlon),
+                }}
+                title={event.eventName}
+              />
+            ))}
+          </GoogleMap>
+        ) : (
+          <p>Loading map...</p>
         )}
       </div>
     </div>

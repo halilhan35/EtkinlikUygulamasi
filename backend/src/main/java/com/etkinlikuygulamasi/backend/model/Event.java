@@ -29,6 +29,8 @@ public class Event {
     private String eventLocation;
     @Column(name = "eventcategory")
     private String eventCategory;
+    private double eventlocationlat;
+    private double eventlocationlon;
 
     public Event() {
 
@@ -109,6 +111,22 @@ public class Event {
 
     public void setEventCategory(String eventCategory) {
         this.eventCategory = eventCategory;
+    }
+
+    public double getEventlocationlat() {
+        return eventlocationlat;
+    }
+
+    public void setEventlocationlat(double eventlocationlat) {
+        this.eventlocationlat = eventlocationlat;
+    }
+
+    public double getEventlocationlon() {
+        return eventlocationlon;
+    }
+
+    public void setEventlocationlon(double eventlocationlon) {
+        this.eventlocationlon = eventlocationlon;
     }
 
     @Override

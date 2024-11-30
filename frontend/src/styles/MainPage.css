@@ -10,6 +10,7 @@
   height: 2048px;
   background: #FFEDD5;
   border: 1px solid #000000;
+  z-index: 0;
 }
 
 /* EVENT APP */
@@ -221,4 +222,14 @@
 
 .user-events li button:hover {
   background-color: #B0B0B0;
+}
+
+.map-container {
+  position: absolute;
+  width: 1300px;
+  left: 69px;
+  top: 310px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  z-index: -1;
 }

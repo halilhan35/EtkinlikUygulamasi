@@ -28,6 +28,8 @@ public class User {
     private String number;
     @Column(name = "profilephotopath")
     private String profilePhotoPath;
+    private double locationlat; 
+    private double locationlon;
 
     public User() {
 
@@ -143,6 +145,22 @@ public class User {
 
     public void setProfilePhotoPath(String profilePhotoPath) {
         this.profilePhotoPath = profilePhotoPath;
+    }
+
+    public double getLocationlat() {
+        return locationlat;
+    }
+
+    public double getLocationlon() {
+        return locationlon;
+    }
+
+    public void setLocationlat(double locationlat) {
+        this.locationlat = locationlat;
+    }
+
+    public void setLocationlon(double locationlon) {
+        this.locationlon = locationlon;
     }
 
     @Override
